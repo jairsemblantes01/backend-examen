@@ -6,17 +6,31 @@ import random
 import heartpy as hp
 import scipy.io as sio
 import base64
+from fastapi.middleware.cors import CORSMiddleware
 
 import io
 
 
 app = FastAPI()
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+    "*"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Body(BaseModel):
     nameFile: str
     b64: str
 
-@app.post("/get-ppm/")
+@app.post("/ecg/")
 async def create_item(body: Body):
     body.b64 = str.encode(body.b64)
     print(body)
