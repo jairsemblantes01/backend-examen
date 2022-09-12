@@ -15,7 +15,8 @@ app = FastAPI()
 origins = [
     "http://localhost",
     "http://localhost:3000",
-    "*"
+    "*",
+    "https://ecg-plus.herokuapp.com"
 ]
 
 app.add_middleware(
