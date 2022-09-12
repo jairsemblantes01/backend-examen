@@ -20,7 +20,9 @@ origins = [
     "https://ecg-plus.herokuapp.com/",
     "ecg-plus.herokuapp.com/",
     "http://ecg-plus.herokuapp.com",
-    "http://192.168.0.108:3000/"
+    "http://192.168.0.108:3000/",
+    "http://172.16.26.118:53712/",
+    "http://172.16.26.118:53712"
 ]
 
 app.add_middleware(
