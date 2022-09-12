@@ -20,17 +20,15 @@ origins = [
     "https://ecg-plus.herokuapp.com/",
     "ecg-plus.herokuapp.com/",
     "http://ecg-plus.herokuapp.com",
-    "http://192.168.0.108:3000/",
-    "http://172.16.26.118:53712/",
-    "http://172.16.26.118:53712"
+    "http://192.168.0.108:3000",
+    "https://ecg-plus.herokuapp.com/"
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
-    allow_methods=["POST", "GET"],
+    allow_methods=["*"],
     allow_headers=["*"],
-    max_age=3600,
 )
 
 class Body(BaseModel):
