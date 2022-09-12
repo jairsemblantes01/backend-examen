@@ -17,12 +17,14 @@ origins = [
     "http://localhost:3000",
     "https://ecg-plus.herokuapp.com",
     "ecg-plus.herokuapp.com",
+    "https://ecg-plus.herokuapp.com/",
+    "ecg-plus.herokuapp.com/",
     "http://ecg-plus.herokuapp.com"
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=origins,
     allow_methods=["POST", "GET"],
     allow_headers=["*"],
     max_age=3600,
